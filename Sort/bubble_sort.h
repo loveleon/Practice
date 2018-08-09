@@ -8,6 +8,7 @@ namespace Sort{
             Bubble_Sort() = default;
             Bubble_Sort(int * _ptArr,size_t sz);
             void bubble_sort();
+            void bubble_sort_flag();
             void print()const;
             void print_test()const;
         private:

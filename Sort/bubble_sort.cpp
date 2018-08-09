@@ -30,6 +30,29 @@ void Bubble_Sort::bubble_sort()
     }
 }
 
+void Bubble_Sort::bubble_sort_flag()
+{
+    bool bFlag = false;
+    for(size_t i=0;i < iSize - 1;++i)
+    {
+        bFlag = false;
+        for(size_t j = iSize - 1;j > i;--j)
+        {
+            if(ptArr[j - 1] > ptArr[j])
+            {
+                ptArr[j-1] ^= ptArr[j];
+                ptArr[j]   ^= ptArr[j-1];
+                ptArr[j-1] ^= ptArr[j];
+                bFlag = true;
+            }
+
+        }
+        if(!bFlag){
+            break;
+        }
+    }
+}
+
 void Bubble_Sort::print()const
 {
     std::for_each(ptArr,ptArr+iSize,[](const int& t){std::cout << t << " ";});

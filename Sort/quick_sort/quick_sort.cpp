@@ -17,17 +17,23 @@ namespace Sort{
 
     int Quick_Sort::disvion(int *pArry, int ilft, int irhs)
     {
-        //浠ユ渶宸﹁竟鍊间负鍩哄噯
+        //最左端(ilft)为基准值
         int ibase = pArry[ilft];
         while(ilft < irhs){
+            //从右端开始向左扫描，找到第一个小于基准值,
             while(ilft<irhs && pArry[irhs] >= ibase)
                 irhs--;
+            //比base小的值，放在左边lft位置
             pArry[ilft] = pArry[irhs];
+            //从左边向右边，直到找到大于base的值
             while(ilft<irhs && pArry[ilft] <= ibase)
                 ilft++;
+            //将大于base值放在右边
             pArry[irhs] = pArry[ilft];
         }
+        //此时lft位置左边值都小于等于base值，右边都大于等于base值
         pArry[ilft] = ibase;
+        //返回分治位置
         return ilft;
     }
 

@@ -13,3 +13,6 @@ add_executable(fileutil_test ${SRC} ${TBSYS})
 
 aux_source_directory(./daemon_test DAEMON_TEST)
 add_executable(daemon_test ${DAEMON_TEST} ${TBSYS})
+
+aux_source_directory(./linklist_test LINK_TEST)
+add_executable(linklist ${LINK_TEST} ${TBSYS})

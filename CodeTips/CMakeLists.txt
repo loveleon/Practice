@@ -16,3 +16,6 @@ add_executable(daemon_test ${DAEMON_TEST} ${TBSYS})
 
 aux_source_directory(./linklist_test LINK_TEST)
 add_executable(linklist ${LINK_TEST} ${TBSYS})
+
+aux_source_directory(./config_test CONFIG_TEST)
+add_executable(config_test ${CONFIG_TEST} ${TBSYS})
